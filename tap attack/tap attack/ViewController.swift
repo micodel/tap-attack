@@ -9,6 +9,10 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet var timeLabel:UILabel
+    @IBOutlet var scoreLabel:UILabel
+    @IBOutlet var tapButton:UIButton
                             
     override func viewDidLoad() {
         super.viewDidLoad()

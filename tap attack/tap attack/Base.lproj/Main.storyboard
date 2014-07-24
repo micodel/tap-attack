@@ -30,7 +30,7 @@
                                 </state>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timer goes here..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4qf-Fp-gHg">
-                                <rect key="frame" x="0.0" y="436" width="320" height="21"/>
+                                <rect key="frame" x="0.0" y="440" width="320" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -39,6 +39,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="scoreLabel" destination="DsR-fw-SuK" id="90F-yj-VJq"/>
+                        <outlet property="tapButton" destination="GhZ-01-XVq" id="QKA-Zz-ldd"/>
+                        <outlet property="timeLabel" destination="4qf-Fp-gHg" id="ZCf-bQ-wVM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
