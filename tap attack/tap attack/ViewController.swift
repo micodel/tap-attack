@@ -95,8 +95,13 @@ class ViewController: UIViewController {
         finalScoreLabel.textAlignment = NSTextAlignment.Center
         
         gameOverView.addSubview(finalScoreLabel)
+        
+        var playAgainButton = UIButton(frame: CGRectMake(0, 336, gameOverView.frame.size.width, 55))
+        playAgainButton.setTitle("Play Again", forState: UIControlState.Normal)
+        playAgainButton.backgroundColor = UIColor.redColor()
+        playAgainButton.addTarget(self, action: Selector("startGame"), forControlEvents: UIControlEvents.TouchUpInside)
+        gameOverView.addSubview(playAgainButton)
     }
-
 
 
 }
