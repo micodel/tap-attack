@@ -43,6 +43,19 @@ class ViewController: UIViewController {
     // FUNCTIONS
     // ---------
     
+    // Function to (re)set variables and start the game.
+    func startGame() {
+        
+        currentScore = 0
+        currentTime = 5
+        
+        scoreLabel.text = "Score: \(currentScore)"
+        timeLabel.text = "Time Remaining: \(currentTime)"
+        
+        gameTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("runTimer"), userInfo: nil, repeats: true)
+    }
+
+    
     // Function to increase score by 1 (per button click).
     @IBAction func updateScore() {
         ++currentScore

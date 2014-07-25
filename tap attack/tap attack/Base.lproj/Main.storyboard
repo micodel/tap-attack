@@ -28,6 +28,9 @@
                                     <color key="titleColor" red="0.99806810459999995" green="0.99208799820000004" blue="0.93379547230000004" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="updateScore" destination="vXZ-lx-hvc" eventType="touchUpInside" id="zqE-55-UlN"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timer goes here..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4qf-Fp-gHg">
                                 <rect key="frame" x="0.0" y="440" width="320" height="21"/>
@@ -40,9 +43,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="scoreLabel" destination="DsR-fw-SuK" id="H63-Dv-3Bc"/>
-                        <outlet property="tapButton" destination="GhZ-01-XVq" id="QKA-Zz-ldd"/>
-                        <outlet property="timeLabel" destination="4qf-Fp-gHg" id="ZCf-bQ-wVM"/>
+                        <outlet property="scoreLabel" destination="DsR-fw-SuK" id="9WX-jn-cgH"/>
+                        <outlet property="tapButton" destination="GhZ-01-XVq" id="GNf-9d-H1i"/>
+                        <outlet property="timeLabel" destination="4qf-Fp-gHg" id="w1e-ii-pFn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
