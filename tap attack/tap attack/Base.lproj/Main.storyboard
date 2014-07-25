@@ -40,7 +40,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="scoreLabel" destination="DsR-fw-SuK" id="90F-yj-VJq"/>
+                        <outlet property="scoreLabel" destination="DsR-fw-SuK" id="H63-Dv-3Bc"/>
                         <outlet property="tapButton" destination="GhZ-01-XVq" id="QKA-Zz-ldd"/>
                         <outlet property="timeLabel" destination="4qf-Fp-gHg" id="ZCf-bQ-wVM"/>
                     </connections>

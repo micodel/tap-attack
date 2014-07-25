@@ -9,5 +9,5 @@ Tap a button as many times as you can in the given time limit.
 
 ## Summary
 
-Platform: Xcode6 (beta)  
+Platform: Xcode6 (beta), iPhone 4s  
 Languages: Swift  
