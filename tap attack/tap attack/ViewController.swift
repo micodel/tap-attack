@@ -10,6 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    // GLOBAL VARIABLES
+    // ----------------
+    
     // Variables connected to labels and buttons on main view.
     @IBOutlet var timeLabel:UILabel
     @IBOutlet var scoreLabel:UILabel
@@ -19,13 +22,26 @@ class ViewController: UIViewController {
     var currentScore = Int()
     var currentTime = Int()
     
+    // Initializes game timer.
+    var gameTimer = NSTimer()
     
-                            
+    
+    // SYSTEM
+    // ------
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
+    // FUNCTIONS
+    // ---------
     
     // Function to increase score by 1 (per button click).
     @IBAction func updateScore() {
@@ -33,13 +49,18 @@ class ViewController: UIViewController {
         // Refreshes scoreLabel text to reflect new score.
         scoreLabel.text = "Score: \(currentScore)"
     }
-
     
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    // Function to count down timer until it reaches 0.
+    func runTimer() {
+        --currentTime
+        timeLabel.text = "Time Remaining: \(currentTime)"
+        
+        if (currentTime == 0){
+            
+            gameTimer.invalidate()
+        }
     }
+
 
 
 }
