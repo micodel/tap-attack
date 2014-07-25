@@ -73,6 +73,7 @@ class ViewController: UIViewController {
         if (currentTime == 0){
             
             gameTimer.invalidate()
+            renderGameOverView()
         }
     }
     
