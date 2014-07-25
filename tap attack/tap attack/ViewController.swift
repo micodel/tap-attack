@@ -25,6 +25,9 @@ class ViewController: UIViewController {
     // Initializes game timer.
     var gameTimer = NSTimer()
     
+    // Initializes game over view.
+    var gameOverView = UIView()
+    
     
     // SYSTEM
     // ------
@@ -55,7 +58,6 @@ class ViewController: UIViewController {
         gameTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("runTimer"), userInfo: nil, repeats: true)
     }
 
-    
     // Function to increase score by 1 (per button click).
     @IBAction func updateScore() {
         ++currentScore
