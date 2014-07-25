@@ -75,6 +75,26 @@ class ViewController: UIViewController {
             gameTimer.invalidate()
         }
     }
+    
+    // Defines game over view and appends over main view.
+    func renderGameOverView() {
+        gameOverView = UIView(frame: CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height))
+        
+        gameOverView.backgroundColor = UIColor.blackColor()
+        
+        self.view.addSubview(gameOverView)
+        
+        var gameOverImage = UIImageView(frame: CGRectMake(40, 63, 240, 128))
+        gameOverImage.image = UIImage(named: "game-over")
+        gameOverView.addSubview(gameOverImage)
+        
+        var finalScoreLabel = UILabel(frame: CGRectMake(0, 237, 320, 20))
+        finalScoreLabel.text = "Final Score \(currentScore)"
+        finalScoreLabel.textColor = UIColor.whiteColor()
+        finalScoreLabel.textAlignment = NSTextAlignment.Center
+        
+        gameOverView.addSubview(finalScoreLabel)
+    }
 
 
 
