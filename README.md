@@ -11,5 +11,5 @@ After time runs out, displays final score and lets you play again.
 
 ## Summary
 
-Platform: Xcode6 (beta), iPhone 4s  
+Platform: Xcode6 (beta), iPhone 5s  
 Languages: Swift  
