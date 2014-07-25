@@ -7,6 +7,8 @@ iPhone app built in Swift following Sam Bensley's YouTube tutorial.
 
 Tap a button as many times as you can in the given time limit.  
 
+After time runs out, displays final score and lets you play again.  
+
 ## Summary
 
 Platform: Xcode6 (beta), iPhone 4s  
