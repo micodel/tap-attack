@@ -49,12 +49,18 @@ class ViewController: UIViewController {
     // Function to (re)set variables and start the game.
     func startGame() {
         
+        // Removes game over view from screen if present.
+        gameOverView.removeFromSuperview()
+        
+        // (re)Sets current score to 0 and current time to 5 seconds.
         currentScore = 0
         currentTime = 5
         
+        // Defines the text to be shown in current score and time labels.
         scoreLabel.text = "Score: \(currentScore)"
         timeLabel.text = "Time Remaining: \(currentTime)"
         
+        // Game timer to execute. Runs timer function every 1 second.
         gameTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("runTimer"), userInfo: nil, repeats: true)
     }
 
@@ -70,8 +76,8 @@ class ViewController: UIViewController {
         --currentTime
         timeLabel.text = "Time Remaining: \(currentTime)"
         
+        // When timer reachers 0, stops timer and renders game over view.
         if (currentTime == 0){
-            
             gameTimer.invalidate()
             renderGameOverView()
         }
@@ -83,12 +89,15 @@ class ViewController: UIViewController {
         
         gameOverView.backgroundColor = UIColor.blackColor()
         
+        // Lays game over view on top of main view.
         self.view.addSubview(gameOverView)
         
         var gameOverImage = UIImageView(frame: CGRectMake(40, 63, 240, 128))
+        // Renders image found in images.xcassets by name.
         gameOverImage.image = UIImage(named: "game-over")
         gameOverView.addSubview(gameOverImage)
         
+        // Defines and adds label to display final score.
         var finalScoreLabel = UILabel(frame: CGRectMake(0, 237, 320, 20))
         finalScoreLabel.text = "Final Score \(currentScore)"
         finalScoreLabel.textColor = UIColor.whiteColor()
@@ -96,6 +105,7 @@ class ViewController: UIViewController {
         
         gameOverView.addSubview(finalScoreLabel)
         
+        // Defines and adds play again button to game over view.
         var playAgainButton = UIButton(frame: CGRectMake(0, 336, gameOverView.frame.size.width, 55))
         playAgainButton.setTitle("Play Again", forState: UIControlState.Normal)
         playAgainButton.backgroundColor = UIColor.redColor()
