@@ -80,6 +80,7 @@ class ViewController: UIViewController {
         if (currentTime == 0){
             gameTimer.invalidate()
             renderGameOverView()
+            
         }
     }
     
@@ -111,6 +112,23 @@ class ViewController: UIViewController {
         playAgainButton.backgroundColor = UIColor.redColor()
         playAgainButton.addTarget(self, action: Selector("startGame"), forControlEvents: UIControlEvents.TouchUpInside)
         gameOverView.addSubview(playAgainButton)
+        
+        
+        //  HIGHSCORE
+        var defaults = NSUserDefaults()
+        var localHighScore = defaults.integerForKey("highScore")
+        if currentScore > localHighScore {
+            defaults.setInteger(currentScore, forKey: "highScore")
+        }
+        var showHighScore = defaults.integerForKey("highScore")
+        
+        var highScoreLabel = UILabel(frame: CGRectMake(0, 307, 320, 20))
+        highScoreLabel.text = "Highscore: \(showHighScore)"
+        highScoreLabel.textColor = UIColor.whiteColor()
+        highScoreLabel.textAlignment = NSTextAlignment.Center
+        
+        gameOverView.addSubview(highScoreLabel)
+
     }
 
 
