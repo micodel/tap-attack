@@ -119,16 +119,27 @@ class ViewController: UIViewController {
     
     // Defines and adds highscore label to gameover view.
     func appendHighScoreLabel() {
+        // Initializes variable to access onboard data for persistent high score even after app is closed.
         var defaults = NSUserDefaults()
+        
+        // Pulls the key/value pair for "highScore", also initialized as 0 here on first use.
         var localHighScore = defaults.integerForKey("highScore")
+        
+        // Defines highScoreLabel
+        var highScoreLabel = UILabel(frame: CGRectMake(0, 307, 320, 20))
+        
+        // Default value is set, for when highscore is not beaten.
+        highScoreLabel.text = "Highscore: \(localHighScore)"
+        highScoreLabel.textColor = UIColor.whiteColor()
+        
+        // If highscore is beaten...
         if currentScore > localHighScore {
             defaults.setInteger(currentScore, forKey: "highScore")
+            highScoreLabel.text = "NEW HIGH SCORE!"
+            highScoreLabel.textColor = UIColor.yellowColor()
         }
-        var showHighScore = defaults.integerForKey("highScore")
         
-        var highScoreLabel = UILabel(frame: CGRectMake(0, 307, 320, 20))
-        highScoreLabel.text = "Highscore: \(showHighScore)"
-        highScoreLabel.textColor = UIColor.whiteColor()
+       
         highScoreLabel.textAlignment = NSTextAlignment.Center
         
         gameOverView.addSubview(highScoreLabel)
