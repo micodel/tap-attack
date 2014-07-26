@@ -26,7 +26,13 @@ class ViewController: UIViewController {
             scoreLabel.text = "Score: \(currentScore)"
         }
     }
-    var currentTime = Int()
+    
+    var currentTime:Int = Int() {
+        didSet {
+            timeLabel.text = "Time Remaining: \(currentTime)"
+        }
+    }
+    
     
     // Initializes game timer.
     var gameTimer = NSTimer()
@@ -61,10 +67,7 @@ class ViewController: UIViewController {
         // (re)Sets current score to 0 and current time to 5 seconds.
         currentScore = 0
         currentTime = 5
-        
-        // Defines the text to be shown in current score and time labels.
-        timeLabel.text = "Time Remaining: \(currentTime)"
-        
+    
         // Game timer to execute. Runs timer function every 1 second.
         gameTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("runTimer"), userInfo: nil, repeats: true)
     }
@@ -77,7 +80,6 @@ class ViewController: UIViewController {
     // Function to count down timer until it reaches 0.
     func runTimer() {
         --currentTime
-        timeLabel.text = "Time Remaining: \(currentTime)"
         
         // When timer reachers 0, stops timer and renders game over view.
         if (currentTime == 0){
