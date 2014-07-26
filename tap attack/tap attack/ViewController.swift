@@ -19,7 +19,13 @@ class ViewController: UIViewController {
     @IBOutlet var tapButton:UIButton
     
     // Variables to contain score and time per round.
-    var currentScore = Int()
+    var currentScore:Int = Int() {
+        // Refreshes scoreLabel text to reflect new score everytime score is set/updated.
+        didSet {
+            // Defines the text to be shown in current score label.
+            scoreLabel.text = "Score: \(currentScore)"
+        }
+    }
     var currentTime = Int()
     
     // Initializes game timer.
@@ -57,7 +63,6 @@ class ViewController: UIViewController {
         currentTime = 5
         
         // Defines the text to be shown in current score and time labels.
-        scoreLabel.text = "Score: \(currentScore)"
         timeLabel.text = "Time Remaining: \(currentTime)"
         
         // Game timer to execute. Runs timer function every 1 second.
@@ -67,8 +72,6 @@ class ViewController: UIViewController {
     // Function to increase score by 1 (per button click).
     @IBAction func updateScore() {
         ++currentScore
-        // Refreshes scoreLabel text to reflect new score.
-        scoreLabel.text = "Score: \(currentScore)"
     }
     
     // Function to count down timer until it reaches 0.
